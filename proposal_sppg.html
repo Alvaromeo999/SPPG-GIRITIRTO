@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proposal Website SPPG Giritirto - OemahDesainWeb</title>
     <style>
-        /* SETTING KERTAS A4 */
-        /* PENTING: Gunakan TITIK (.) bukan KOMA (,) untuk desimal */
-        @page { size: A4; margin: 0; } 
+        /* SETTING KERTAS A4 - Margin Browser dinolkan biar kita atur sendiri */
+        @page { size: A4; margin: 0; }
         
         body { 
             font-family: 'Times New Roman', Times, serif; 
-            line-height: 1.3; /* Spasi baris sedikit lebih rapat */
+            line-height: 1.25; /* Spasi baris lebih rapat agar muat */
             color: #000;
             background: #ccc; 
             padding: 20px;
@@ -22,7 +21,7 @@
             background: white;
             width: 21cm;
             min-height: 29.7cm;
-            /* Padding diperkecil agar ruang teks lebih luas */
+            /* Margin Kertas: Atas/Bawah 1.5cm, Kiri/Kanan 2cm */
             padding: 1.5cm 2cm; 
             margin: 0 auto;
             box-sizing: border-box;
@@ -34,58 +33,70 @@
         .header { 
             text-align: center; 
             border-bottom: 3px double #000; 
-            padding-bottom: 5px; /* Dikurangi */
-            margin-bottom: 15px; /* Dikurangi */
+            padding-bottom: 5px; 
+            margin-bottom: 15px; 
         }
-        .header img { height: 65px; margin-bottom: 5px; } /* Ukuran logo disesuaikan */
+        /* Logo diperkecil sedikit biar hemat tempat */
+        .header img { height: 60px; margin-bottom: 2px; } 
         .header h1 { margin: 0; font-size: 16pt; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
         .header h2 { margin: 2px 0; font-size: 11pt; font-weight: normal; }
-        .header p { margin: 0; font-size: 10pt; font-style: italic; }
+        .header p { margin: 0; font-size: 9pt; font-style: italic; }
         
         /* ISI SURAT */
-        .meta-data { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 11pt; }
+        /* Ukuran font isi diset 10.5pt agar pas 1 halaman */
+        .content { font-size: 10.5pt; }
         
+        .meta-data { display: flex; justify-content: space-between; margin-bottom: 10px; }
+        
+        /* Heading Sub-bab */
         .content h3 { 
-            font-size: 12pt; 
+            font-size: 11pt; 
             text-transform: uppercase; 
             border-bottom: 1px solid #000; 
             padding-bottom: 2px; 
-            margin-top: 15px; /* Jarak antar bab dirapatkan */
-            margin-bottom: 8px;
+            margin-top: 12px; /* Jarak antar bab dirapatkan */
+            margin-bottom: 5px;
         }
-        .content p { text-align: justify; margin-bottom: 6px; font-size: 11pt; }
-        .content ul { padding-left: 20px; margin: 2px 0 8px 0; }
-        .content li { margin-bottom: 2px; font-size: 11pt; }
         
-        /* TABEL */
-        table { width: 100%; border-collapse: collapse; margin: 8px 0; }
-        table th, table td { border: 1px solid #000; padding: 5px; text-align: left; font-size: 10pt; }
+        .content p { text-align: justify; margin-bottom: 5px; margin-top: 0; }
+        .content ul { padding-left: 20px; margin: 2px 0 5px 0; }
+        .content li { margin-bottom: 2px; }
+        
+        /* TABEL COMPACT */
+        table { width: 100%; border-collapse: collapse; margin: 5px 0; }
+        table th, table td { border: 1px solid #000; padding: 4px 6px; text-align: left; font-size: 10pt; vertical-align: top; }
         table th { background-color: #f0f0f0; text-align: center; font-weight: bold; }
 
-        /* TANDA TANGAN */
-        .signature { 
-            margin-top: 20px; /* Jarak dari paragraf terakhir */
-            float: right; 
-            text-align: center; 
-            width: 200px; 
-            font-size: 11pt;
+        /* TANDA TANGAN CENTER */
+        .signature-container {
+            width: 100%;
+            overflow: hidden; /* Clear float */
+            margin-top: 15px;
         }
+        .signature { 
+            float: right; 
+            text-align: center; /* Ini kunci agar teks di dalam kotak rata tengah */
+            width: 250px; /* Kotak diperlebar agar teks panjang tidak turun baris */
+        }
+        .signature p { text-align: center; margin: 0; }
         .signature .name { 
             font-weight: bold; 
             text-decoration: underline; 
-            margin-top: 60px; /* Ruang untuk TTD basah/stempel */
+            margin-top: 60px; /* Ruang TTD Basah */
+            display: block;
         }
 
         /* TOMBOL PRINT */
         .no-print { text-align: center; margin-bottom: 20px; }
         .btn-print { background: #2563eb; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-family: sans-serif; font-weight: bold; cursor: pointer; border: none; }
-        .btn-print:hover { background: #1d4ed8; }
-
+        
         @media print {
             body { background: white; padding: 0; margin: 0; }
-            .page { width: 100%; height: auto; margin: 0; padding: 1.5cm 2cm; box-shadow: none; border: none; }
+            .page { 
+                width: 100%; height: auto; margin: 0; padding: 1.5cm 2cm; box-shadow: none; border: none; 
+            }
             .no-print { display: none; }
-            @page { margin: 0; } /* Reset margin browser biar full control di CSS .page */
+            @page { margin: 0; } 
         }
     </style>
 </head>
@@ -93,7 +104,7 @@
 
     <div class="no-print">
         <button onclick="window.print()" class="btn-print">🖨️ Klik Disini untuk Simpan PDF</button>
-        <p style="font-family: sans-serif; font-size: 12px; margin-top: 5px; color: #555;">(Pilih Destination: <b>Save as PDF</b> | Paper Size: <b>A4</b> | Scale: <b>Default/100%</b>)</p>
+        <p style="font-family: sans-serif; font-size: 12px; margin-top: 5px; color: #555;">(Setting Printer: Scale = <b>100%</b> atau <b>Fit to Page</b>)</p>
     </div>
 
     <div class="page">
@@ -134,7 +145,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th style="width: 5%;">No</th>
+                        <th style="width: 5%; text-align: center;">No</th>
                         <th>Modul / Fitur</th>
                         <th>Keterangan</th>
                     </tr>
@@ -143,7 +154,7 @@
                     <tr>
                         <td style="text-align: center;">1</td>
                         <td><strong>Profil Situs Web Resmi</strong></td>
-                        <td>Halaman Beranda, Profil Organisasi, Visi Misi, Legalitas, Galeri Foto Kegiatan.</td>
+                        <td>Halaman Beranda, Profil Organisasi, Visi Misi, Legalitas, Galeri.</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">2</td>
@@ -153,12 +164,12 @@
                     <tr>
                         <td style="text-align: center;">3</td>
                         <td><strong>Portal Mitra Tani</strong></td>
-                        <td>Fitur pendaftaran pemasok warga lokal & info kebutuhan bahan baku harian.</td>
+                        <td>Fitur pendaftaran pemasok warga lokal & info kebutuhan bahan.</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">4</td>
                         <td><strong>Integrasi Aduan</strong></td>
-                        <td>Tombol WhatsApp langsung ke Admin & Formulir Pengaduan Masyarakat.</td>
+                        <td>Tombol WhatsApp langsung ke Admin & Form Pengaduan.</td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">5</td>
@@ -171,11 +182,12 @@
             <h3>III. Penutup</h3>
             <p>Besar harapan kami agar SPPG Giritirto dapat menjadi percontohan desa digital dalam program pengelolaan MBG di Kabupaten Wonogiri. Atas perhatian dan kerjasamanya, kami ucapkan terima kasih.</p>
 
-            <div class="signature">
-                <p>Hormat Kami,</p>
-                <br><br>
-                <div class="name">ARIF ENDRY WASKITO</div>
-                <div>OemahDesainWeb</div>
+            <div class="signature-container">
+                <div class="signature">
+                    <p>Hormat Kami,</p>
+                    <div class="name">ARIF ENDRY WASKITO</div>
+                    <div style="font-size: 10pt;">OemahDesainWeb</div>
+                </div>
             </div>
         </div>
     </div>
