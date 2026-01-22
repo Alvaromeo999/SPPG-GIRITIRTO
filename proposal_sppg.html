@@ -86,4 +86,196 @@
         .btn-print:hover { background: #1d4ed8; }
         
         @media print {
-            body {
+            body { background: white; padding: 0; margin: 0; }
+            .page { width: 100%; height: auto; margin: 0; padding: 1.5cm 2.5cm; box-shadow: none; border: none; }
+            .no-print { display: none; }
+            @page { margin: 0; } 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print">
+        <button onclick="window.print()" class="btn-print">🖨️ Simpan PDF / Cetak Proposal</button>
+    </div>
+
+    <div class="page">
+        <div class="header-container">
+            <img src="assets/img/logo_wonogiri.png" alt="Wonogiri" class="side-logo">
+            <div class="header-center">
+                <img src="assets/img/logo_kita.png" alt="ODW">
+                <h1>OEMAHDESAINWEB</h1>
+                <h2>Jasa Pembuatan Website Profesional & Sistem Informasi</h2>
+                <p>Jl. Kepodang VII No. 7 Sukorejo, Giritirto, Wonogiri 57611<br>WA: 0812-1515-633 | Web: oemahdesainweb.my.id</p>
+            </div>
+            <img src="assets/img/logo_bgn.png" alt="BGN" class="side-logo">
+        </div>
+
+        <div class="content">
+            <div class="meta-data">
+                <div>Nomor: 001/ODW/I/2026</div>
+                <div>Wonogiri, 22 Januari 2026</div>
+            </div>
+
+            <div>
+                Kepada Yth,<br>
+                <strong>Kepala SPPG Giritirto</strong><br>
+                Jl. Ki Mangun Sarkoro, Sukorejo,<br>
+                Giritirto, Wonogiri 57611
+            </div>
+
+            <p style="margin-top: 15px; text-align: center; font-weight: bold; text-decoration: underline;">
+                PERIHAL: PENAWARAN PENGEMBANGAN SISTEM INFORMASI & WEBSITE TERPADU SPPG
+            </p>
+
+            <p>Dengan hormat,</p>
+            
+            <h3>I. LATAR BELAKANG</h3>
+            <p>Program Makan Bergizi Gratis (MBG) adalah inisiatif nasional yang krusial. Di tingkat Kelurahan Giritirto, keberhasilan program ini tidak hanya diukur dari tersajinya makanan, tetapi juga dari transparansi pengelolaan, jaminan kualitas gizi, dan seberapa besar dampak ekonominya bagi warga lokal.</p>
+            <p>Saat ini, tantangan yang sering dihadapi adalah:</p>
+            <ul>
+                <li><strong>Informasi Terputus:</strong> Orang tua siswa sulit memantau menu dan nilai gizi yang dikonsumsi anak.</li>
+                <li><strong>Pelibatan Warga:</strong> Petani/pedagang lokal di Giritirto belum memiliki akses informasi satu pintu untuk menyuplai bahan baku.</li>
+                <li><strong>Pelaporan Manual:</strong> Potensi ketidaksesuaian data distribusi dan stok bahan.</li>
+            </ul>
+            <p>OemahDesainWeb menawarkan solusi digital berupa Website Terpadu untuk menjawab tantangan tersebut.</p>
+
+            <h3>II. KONSEP SOLUSI: "GIRITIRTO GIZI HUB"</h3>
+            <p>Kami tidak hanya membuat website profil, melainkan sebuah <strong>Platform Manajemen Transparan</strong> yang menghubungkan Dapur SPPG, Sekolah, Orang Tua, dan Petani Lokal.</p>
+            <p><strong>Visi Website:</strong> "Menjadikan SPPG Giritirto sebagai Barometer Transparansi & Pemberdayaan Ekonomi Program MBG di Wonogiri."</p>
+
+            <h3>III. FITUR & SPESIFIKASI WEBSITE</h3>
+            <p><strong>A. Modul Publik (Dapat Diakses Warga & Wali Murid)</strong></p>
+            <ul>
+                <li><strong>Jadwal Menu & Edukasi Gizi (E-Menu):</strong> Menampilkan foto menu, detail nilai gizi (Kalori/Protein), dan status halal/higienis.</li>
+                <li><strong>Dashboard Distribusi Real-Time:</strong> Grafik porsi tersalurkan dan daftar sekolah penerima.</li>
+                <li><strong>Kanal Aspirasi:</strong> Formulir kritik/saran yang terhubung langsung ke WhatsApp Admin SPPG.</li>
+            </ul>
+            <p><strong>B. Modul Ekonomi Rakyat ("Mitra Tani Giritirto")</strong></p>
+            <ul>
+                <li><strong>Papan Pengumuman Kebutuhan:</strong> Info kebutuhan bahan baku (Contoh: "Dicari 50kg Bayam").</li>
+                <li><strong>Formulir Pendaftaran Mitra:</strong> Warga bisa mendaftar dan upload harga penawaran.</li>
+            </ul>
+            <p><strong>C. Modul Admin (Internal SPPG)</strong></p>
+            <ul>
+                <li>Manajemen Stok Sederhana, Dokumentasi Kegiatan, dan Database Penerima.</li>
+            </ul>
+
+            <div class="signature-container">
+                <div class="signature">
+                    <p>Hormat Kami,</p>
+                    <div class="name">ARIF ENDRY WASKITO</div>
+                    <div>OemahDesainWeb</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page page-break">
+        <div style="text-align: right; font-size: 9pt; font-style: italic; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 20px;">
+            Lampiran I - Proposal SPPG Giritirto
+        </div>
+
+        <div class="content">
+            <h3>IV. KEUNTUNGAN BAGI SPPG GIRITIRTO</h3>
+            <ul>
+                <li><strong>Kepercayaan Tinggi:</strong> Wali murid tenang karena tahu apa yang dimakan anaknya.</li>
+                <li><strong>Anti-Korupsi:</strong> Transparansi stok dan belanja bahan baku yang bisa dipertanggungjawabkan.</li>
+                <li><strong>Ekonomi Berputar:</strong> Memastikan anggaran MBG kembali ke kantong petani/pedagang Giritirto.</li>
+                <li><strong>Branding Positif:</strong> Menjadi percontohan kelurahan "Melek Digital" di Wonogiri.</li>
+            </ul>
+
+            <h3>V. TEKNOLOGI & KEAMANAN</h3>
+            <ul>
+                <li><strong>Domain:</strong> .id atau .org (Mencerminkan instansi resmi).</li>
+                <li><strong>Kecepatan:</strong> Server ringan, akses cepat (Mobile Friendly) meski sinyal lemah.</li>
+                <li><strong>Keamanan:</strong> Dilengkapi SSL (Gembok Hijau).</li>
+            </ul>
+
+            <h3>VI. ESTIMASI WAKTU PENGERJAAN</h3>
+            <p>Kami berkomitmen menyelesaikan sistem ini dalam waktu <strong>10 Hari Kerja</strong>, meliputi:</p>
+            <table>
+                <tr>
+                    <th width="20%">Tahap</th>
+                    <th>Kegiatan</th>
+                </tr>
+                <tr>
+                    <td align="center">Tahap 1</td>
+                    <td>Desain UI/UX & Pengumpulan Data (Menu, Profil).</td>
+                </tr>
+                <tr>
+                    <td align="center">Tahap 2</td>
+                    <td>Pengembangan Fitur Mitra Tani, E-Menu, & Dashboard.</td>
+                </tr>
+                <tr>
+                    <td align="center">Tahap 3</td>
+                    <td>Input Data Dummy, Testing, & Pelatihan Admin (Gratis).</td>
+                </tr>
+            </table>
+
+            <h3>VII. PENUTUP</h3>
+            <p>Digitalisasi SPPG MBG bukan lagi pilihan, melainkan kebutuhan untuk menjaga amanah program nasional. OemahDesainWeb, sebagai putra daerah, siap mendampingi Kelurahan Giritirto mewujudkan sistem pangan yang transparan dan memberdayakan.</p>
+
+            <hr style="margin: 30px 0; border: 1px dashed #000;">
+            
+            <h2 class="doc-title">BLUEPRINT SISTEM WEBSITE SPPG MBG GIRITIRTO</h2>
+            <p><strong>Kode Proyek:</strong> SPPG-Giritirto-V1 | <strong>Platform:</strong> Web-Based (Mobile Responsive)</p>
+
+            <h3>I. ARSITEKTUR INFORMASI (SITEMAP)</h3>
+            <p><strong>1. Zona Publik:</strong> Beranda (Statistik & Banner), Menu & Gizi, Transparansi, Mitra Tani, Pusat Bantuan.</p>
+            <p><strong>2. Zona Mitra:</strong> Form Penawaran Harga, Status Penerimaan Barang.</p>
+            <p><strong>3. Zona Admin:</strong> Dashboard Utama, Input Manager (Menu/Stok), Mitra Manager (Verifikasi), Inbox Aduan.</p>
+
+            <h3>II. ALUR PENGGUNA (USER FLOW)</h3>
+            <p><strong>A. Wali Murid:</strong> Buka Web > Cek Menu/Gizi > Jika ada keluhan klik "Lapor Masalah".</p>
+            <p><strong>B. Petani/Pedagang:</strong> Buka Web > Cek "Kebutuhan Bahan" > Klik "Saya Punya Stok" > Isi Form Penawaran.</p>
+            <p><strong>C. Admin SPPG:</strong> Login > Update Distribusi (Pagi) > Input Menu Minggu Depan (Mingguan).</p>
+        </div>
+    </div>
+
+    <div class="page page-break">
+        <div style="text-align: right; font-size: 9pt; font-style: italic; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 20px;">
+            Lampiran II - Checklist Data
+        </div>
+
+        <h2 class="doc-title">CHECKLIST KEBUTUHAN DATA WEBSITE</h2>
+        <p>Mohon data berikut dipersiapkan untuk mempercepat proses pengembangan:</p>
+
+        <div class="content">
+            <h3>A. Data Profil & Identitas</h3>
+            <ul>
+                <li class="checklist-item">Logo Resmi (Kelurahan Giritirto & Program MBG/SPPG).</li>
+                <li class="checklist-item">Nomor SK Pembentukan SPPG & Sertifikat Halal/Higienis.</li>
+                <li class="checklist-item">Struktur Organisasi (Nama & Foto Kepala, Ahli Gizi, Pengawas).</li>
+                <li class="checklist-item">Sambutan Singkat Pak Lurah/Kepala SPPG.</li>
+            </ul>
+
+            <h3>B. Data Operasional (Menu & Gizi)</h3>
+            <ul>
+                <li class="checklist-item">Daftar Menu Siklus (Mingguan/Bulanan).</li>
+                <li class="checklist-item">Data Nilai Gizi (Kalori/Protein) per menu (Data Ahli Gizi).</li>
+                <li class="checklist-item">Jadwal Distribusi & Daftar Sekolah Penerima.</li>
+            </ul>
+
+            <h3>C. Data Mitra & Ekonomi</h3>
+            <ul>
+                <li class="checklist-item">Standar Kebutuhan Bahan Pokok Rutin (Beras, Telur, Sayur).</li>
+                <li class="checklist-item">Kontak WhatsApp Petugas Belanja (Procurement).</li>
+            </ul>
+
+            <h3>D. Aset Visual</h3>
+            <ul>
+                <li class="checklist-item">Foto Kegiatan (Anak makan, Proses masak di dapur).</li>
+                <li class="checklist-item">Foto Lokasi (Tampak depan Gedung SPPG).</li>
+            </ul>
+
+            <h3>E. Akses & Admin</h3>
+            <ul>
+                <li class="checklist-item">Nomor WA Admin Utama (Untuk terima aduan).</li>
+                <li class="checklist-item">Akun Email Resmi (Untuk pendaftaran akun website).</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
