@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOP & Matrix Sistem - SPPG Giritirto</title>
     <style>
-        /* SETTING KERTAS A4 LANDSCAPE */
+        /* SETTING KERTAS A4 LANDSCAPE - Margin diperkecil agar muat 1 halaman pas */
         @page { size: A4 landscape; margin: 0; }
         
         body { 
-            font-family: 'Arial', sans-serif; /* Pakai Arial biar lebih tegas untuk tabel */
-            line-height: 1.3; 
+            font-family: 'Arial', sans-serif; 
+            line-height: 1.2; /* Spasi baris lebih rapat */
             color: #000;
             background: #ccc; 
             padding: 20px;
@@ -21,62 +21,66 @@
             background: white;
             width: 29.7cm; /* Lebar A4 Landscape */
             min-height: 21cm; /* Tinggi A4 Landscape */
-            padding: 1.5cm 2cm; 
+            padding: 1cm 1.5cm; /* Padding diperkecil dari sebelumnya */
             margin: 0 auto;
             box-sizing: border-box;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             position: relative;
         }
 
-        /* HEADER */
+        /* HEADER LEBIH COMPACT */
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 3px double #000;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
         }
-        .logo-img { height: 50px; }
+        .logo-img { height: 45px; } /* Logo sedikit diperkecil */
         .header-text { text-align: center; flex: 1; }
-        .header-text h1 { font-size: 14pt; margin: 0; text-transform: uppercase; font-weight: bold; }
-        .header-text p { font-size: 10pt; margin: 0; }
+        .header-text h1 { font-size: 13pt; margin: 0; text-transform: uppercase; font-weight: bold; }
+        .header-text p { font-size: 9pt; margin: 0; }
 
         /* JUDUL HALAMAN */
         .doc-title {
             text-align: center;
             background-color: #14532d;
             color: white;
-            padding: 10px;
+            padding: 6px;
             font-weight: bold;
             text-transform: uppercase;
-            margin-bottom: 20px;
-            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 11pt;
+            border-radius: 4px;
         }
 
-        /* MATRIX TABLE STYLE */
-        table { width: 100%; border-collapse: collapse; font-size: 10pt; }
-        th, td { border: 1px solid #333; padding: 8px 10px; vertical-align: top; }
+        /* MATRIX TABLE STYLE - LEBIH RAPAT */
+        table { width: 100%; border-collapse: collapse; font-size: 9pt; } /* Font tabel diperkecil sedikit */
+        th, td { border: 1px solid #333; padding: 5px 8px; vertical-align: middle; } /* Padding sel diperkecil */
         
         /* WARNA HEADER TABEL */
-        th { background-color: #f0f0f0; text-align: center; text-transform: uppercase; }
+        th { background-color: #f0f0f0; text-align: center; text-transform: uppercase; height: 30px;}
         
-        /* WARNA KOLOM AKTOR (Visual Pembeda) */
-        .actor-admin { background-color: #dcfce7; font-weight: bold; text-align: center; vertical-align: middle; }
-        .actor-warga { background-color: #e0f2fe; font-weight: bold; text-align: center; vertical-align: middle; }
-        .actor-mitra { background-color: #ffedd5; font-weight: bold; text-align: center; vertical-align: middle; }
-        .actor-pimpinan { background-color: #f3f4f6; font-weight: bold; text-align: center; vertical-align: middle; }
+        /* WARNA KOLOM AKTOR */
+        .actor-admin { background-color: #dcfce7; font-weight: bold; text-align: center; }
+        .actor-warga { background-color: #e0f2fe; font-weight: bold; text-align: center; }
+        .actor-mitra { background-color: #ffedd5; font-weight: bold; text-align: center; }
+        .actor-pimpinan { background-color: #f3f4f6; font-weight: bold; text-align: center; }
 
-        /* KETERANGAN ALUR */
-        .flow-arrow { color: #16a34a; font-weight: bold; margin: 0 5px; }
+        .flow-arrow { color: #16a34a; font-weight: bold; margin: 0 3px; }
+
+        /* FOOTER / TTD */
+        .footer-note { margin-top: 10px; font-size: 9pt; font-style: italic; color: #555; }
+        .signature-block { margin-top: 20px; float: right; text-align: center; width: 200px; font-size: 10pt; }
 
         /* TOMBOL PRINT */
-        .no-print { text-align: center; margin-bottom: 20px; }
-        .btn-print { background: #2563eb; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; cursor: pointer; border: none; }
+        .no-print { text-align: center; margin-bottom: 10px; }
+        .btn-print { background: #2563eb; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold; cursor: pointer; border: none; font-size: 12px; }
 
         @media print {
             body { background: white; padding: 0; margin: 0; }
-            .page { width: 100%; height: auto; padding: 1.5cm 2cm; box-shadow: none; border: none; }
+            .page { width: 100%; height: 100%; padding: 1cm 1.5cm; box-shadow: none; border: none; }
             .no-print { display: none; }
             @page { size: landscape; margin: 0; }
         }
@@ -112,7 +116,7 @@
             <tbody>
                 <tr>
                     <td class="actor-admin">
-                        <i class="fas fa-user-cog" style="font-size:24px; display:block; margin-bottom:5px;"></i>
+                        <i class="fas fa-user-cog" style="font-size:20px; display:block; margin-bottom:3px;"></i>
                         ADMIN SPPG<br>(Operator)
                     </td>
                     <td>
@@ -153,7 +157,7 @@
 
                 <tr>
                     <td class="actor-mitra">
-                        <i class="fas fa-tractor" style="font-size:24px; display:block; margin-bottom:5px;"></i>
+                        <i class="fas fa-tractor" style="font-size:20px; display:block; margin-bottom:3px;"></i>
                         MITRA TANI<br>(Warga Lokal)
                     </td>
                     <td>
@@ -170,7 +174,7 @@
 
                 <tr>
                     <td class="actor-warga">
-                        <i class="fas fa-users" style="font-size:24px; display:block; margin-bottom:5px;"></i>
+                        <i class="fas fa-users" style="font-size:20px; display:block; margin-bottom:3px;"></i>
                         WALI MURID<br>(Masyarakat)
                     </td>
                     <td>
@@ -200,8 +204,8 @@
 
                 <tr>
                     <td class="actor-pimpinan">
-                        <i class="fas fa-user-tie" style="font-size:24px; display:block; margin-bottom:5px;"></i>
-                        KEPALA SPPG /<br>LURAH
+                        <i class="fas fa-user-tie" style="font-size:20px; display:block; margin-bottom:3px;"></i>
+                        KEPALA SPPG<br>/ LURAH
                     </td>
                     <td>
                         <strong>1. Pengawasan</strong><br>
@@ -217,16 +221,14 @@
             </tbody>
         </table>
 
-        <div style="margin-top: 20px; font-size: 10pt; font-style: italic;">
-            <strong>Catatan Teknis:</strong><br>
-            SOP ini dirancang untuk meminimalisir input manual yang berulang dan memaksimalkan transparansi publik secara digital (Paperless).
+        <div class="footer-note">
+            * SOP ini dirancang untuk meminimalisir input manual yang berulang dan memaksimalkan transparansi publik secara digital (Paperless).
         </div>
 
-        <div style="margin-top: 40px; float: right; text-align: center; width: 250px;">
+        <div class="signature-block">
             <p>Disiapkan Oleh,</p>
             <br><br><br>
-            <strong>ARIF ENDRY WASKITO</strong><br>
-            OemahDesainWeb
+            <strong>OemahDesainWeb</strong>
         </div>
     </div>
 
