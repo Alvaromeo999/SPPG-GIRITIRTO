@@ -22,23 +22,41 @@
             text-align: center;
         }
 
-        /* PERBAIKAN HEADER AGAR LEBIH BESAR */
-        .logo { display: flex; align-items: center; gap: 15px; } /* Jarak antar logo diperlebar */
-        .logo-img { height: 75px; width: auto; } /* Ukuran logo diperbesar */
+        /* HEADER & LOGO */
+        .logo { display: flex; align-items: center; gap: 15px; }
+        .logo-img { height: 75px; width: auto; }
         .logo-text { 
             margin-left: 10px; 
             color: #14532d; 
-            font-size: 1.8rem; /* Font diperbesar */
-            font-weight: 800; /* Font ditebalkan */
+            font-size: 1.8rem; 
+            font-weight: 800; 
             line-height: 1.1;
         }
         .logo-text span { color: #16a34a; display: block; font-size: 1.4rem; font-weight: 600; }
         
-        /* Responsive Header untuk HP (biar gak numpuk) */
+        /* TOMBOL ADMIN KHUSUS */
+        .btn-admin-login {
+            border: 2px solid #14532d;
+            color: #14532d;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+        .btn-admin-login:hover {
+            background: #14532d;
+            color: white;
+        }
+
+        /* Responsive Header */
         @media (max-width: 768px) {
             .logo-img { height: 50px; }
             .logo-text { font-size: 1.2rem; }
             .logo-text span { font-size: 1rem; }
+            .btn-admin-login span { display: none; } /* Di HP cuma muncul ikon gembok */
         }
     </style>
 </head>
@@ -48,21 +66,25 @@
         <div class="container navbar">
             <div class="logo">
                 <img src="assets/img/logo_wonogiri.png" alt="Logo Wonogiri" class="logo-img">
-                
                 <img src="assets/img/logo_bgn.png" alt="Logo BGN" class="logo-img">
-                
                 <div class="logo-text">
                     SPPG GIRITIRTO
                     <span>KECAMATAN WONOGIRI</span>
                 </div>
             </div>
             <nav>
-                <ul class="nav-links">
+                <ul class="nav-links" style="align-items: center;">
                     <li><a href="#beranda">Beranda</a></li>
                     <li><a href="#menu">Menu & Gizi</a></li>
                     <li><a href="#mitra">Mitra Tani</a></li>
                     <li><a href="#laporan">Transparansi</a></li>
                     <li><a href="#kontak" class="btn btn-primary" style="padding: 10px 25px; color: white;">Lapor/Aduan</a></li>
+                    
+                    <li>
+                        <a href="admin.html" target="_blank" class="btn-admin-login" title="Login Khusus Admin SPPG">
+                            <i class="fas fa-user-lock"></i> <span>Login Admin</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
@@ -233,6 +255,10 @@
                         <li><a href="#">Badan Gizi Nasional</a></li>
                         <li><a href="#">Dinas Kesehatan Wonogiri</a></li>
                     </ul>
+                    
+                    <div style="margin-top: 20px;">
+                        <a href="admin.html" target="_blank" style="color: #64748b; font-size: 0.8rem;"><i class="fas fa-lock"></i> Staff Login</a>
+                    </div>
                 </div>
             </div>
             <div class="copyright">
