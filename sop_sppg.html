@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOP & Matrix Sistem - SPPG Giritirto</title>
+    <style>
+        /* SETTING KERTAS A4 LANDSCAPE */
+        @page { size: A4 landscape; margin: 0; }
+        
+        body { 
+            font-family: 'Arial', sans-serif; /* Pakai Arial biar lebih tegas untuk tabel */
+            line-height: 1.3; 
+            color: #000;
+            background: #ccc; 
+            padding: 20px;
+            margin: 0;
+        }
+        
+        .page {
+            background: white;
+            width: 29.7cm; /* Lebar A4 Landscape */
+            min-height: 21cm; /* Tinggi A4 Landscape */
+            padding: 1.5cm 2cm; 
+            margin: 0 auto;
+            box-sizing: border-box;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        /* HEADER */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px double #000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .logo-img { height: 50px; }
+        .header-text { text-align: center; flex: 1; }
+        .header-text h1 { font-size: 14pt; margin: 0; text-transform: uppercase; font-weight: bold; }
+        .header-text p { font-size: 10pt; margin: 0; }
+
+        /* JUDUL HALAMAN */
+        .doc-title {
+            text-align: center;
+            background-color: #14532d;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        /* MATRIX TABLE STYLE */
+        table { width: 100%; border-collapse: collapse; font-size: 10pt; }
+        th, td { border: 1px solid #333; padding: 8px 10px; vertical-align: top; }
+        
+        /* WARNA HEADER TABEL */
+        th { background-color: #f0f0f0; text-align: center; text-transform: uppercase; }
+        
+        /* WARNA KOLOM AKTOR (Visual Pembeda) */
+        .actor-admin { background-color: #dcfce7; font-weight: bold; text-align: center; vertical-align: middle; }
+        .actor-warga { background-color: #e0f2fe; font-weight: bold; text-align: center; vertical-align: middle; }
+        .actor-mitra { background-color: #ffedd5; font-weight: bold; text-align: center; vertical-align: middle; }
+        .actor-pimpinan { background-color: #f3f4f6; font-weight: bold; text-align: center; vertical-align: middle; }
+
+        /* KETERANGAN ALUR */
+        .flow-arrow { color: #16a34a; font-weight: bold; margin: 0 5px; }
+
+        /* TOMBOL PRINT */
+        .no-print { text-align: center; margin-bottom: 20px; }
+        .btn-print { background: #2563eb; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; cursor: pointer; border: none; }
+
+        @media print {
+            body { background: white; padding: 0; margin: 0; }
+            .page { width: 100%; height: auto; padding: 1.5cm 2cm; box-shadow: none; border: none; }
+            .no-print { display: none; }
+            @page { size: landscape; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print">
+        <button onclick="window.print()" class="btn-print">🖨️ Cetak Matrix SOP (Landscape)</button>
+    </div>
+
+    <div class="page">
+        <div class="header-container">
+            <img src="assets/img/logo_wonogiri.png" alt="Logo" class="logo-img">
+            <div class="header-text">
+                <h1>Lampiran III: Matrix Standard Operating Procedure (SOP)</h1>
+                <p>Sistem Informasi & Website Terpadu SPPG Giritirto</p>
+            </div>
+            <img src="assets/img/logo_bgn.png" alt="Logo" class="logo-img">
+        </div>
+
+        <div class="doc-title">ALUR KERJA & FUNGSI SISTEM "GIRITIRTO GIZI HUB"</div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th width="15%">AKTOR (SIAPA)</th>
+                    <th width="20%">MODUL / FITUR</th>
+                    <th width="40%">ALUR PROSES (BAGAIMANA)</th>
+                    <th width="25%">OUTPUT / TUJUAN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="actor-admin">
+                        <i class="fas fa-user-cog" style="font-size:24px; display:block; margin-bottom:5px;"></i>
+                        ADMIN SPPG<br>(Operator)
+                    </td>
+                    <td>
+                        <strong>1. Manajemen Menu</strong><br>
+                        (Input Data)
+                    </td>
+                    <td>
+                        Login Admin <span class="flow-arrow">→</span> Input Nama Menu <span class="flow-arrow">→</span> Input Nilai Gizi <span class="flow-arrow">→</span> Upload Foto <span class="flow-arrow">→</span> Publish.
+                    </td>
+                    <td>
+                        Wali murid mengetahui menu & gizi H-1 atau Mingguan.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="actor-admin" rowspan="2"></td> <td>
+                        <strong>2. Laporan Distribusi</strong><br>
+                        (Update Harian)
+                    </td>
+                    <td>
+                        Cek Data Dapur <span class="flow-arrow">→</span> Update Angka Porsi (Dashboard) <span class="flow-arrow">→</span> Upload Foto Kegiatan Hari Ini.
+                    </td>
+                    <td>
+                        Transparansi bahwa makanan benar-benar tersalurkan.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>3. Procurement</strong><br>
+                        (Belanja Bahan)
+                    </td>
+                    <td>
+                        Cek Stok Gudang <span class="flow-arrow">→</span> Posting "Info Kebutuhan Bahan" di Web <span class="flow-arrow">→</span> Menunggu Respon Mitra Tani.
+                    </td>
+                    <td>
+                        Membuka peluang bagi petani lokal untuk menyuplai.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="actor-mitra">
+                        <i class="fas fa-tractor" style="font-size:24px; display:block; margin-bottom:5px;"></i>
+                        MITRA TANI<br>(Warga Lokal)
+                    </td>
+                    <td>
+                        <strong>1. Suplai Bahan Baku</strong><br>
+                        (Respon Ekonomi)
+                    </td>
+                    <td>
+                        Buka Website (Menu Mitra) <span class="flow-arrow">→</span> Cek Daftar Kebutuhan <span class="flow-arrow">→</span> Klik Tombol WA <span class="flow-arrow">→</span> Ajukan Stok & Harga.
+                    </td>
+                    <td>
+                        Ekonomi berputar di desa (Petani mendapat pasar pasti).
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="actor-warga">
+                        <i class="fas fa-users" style="font-size:24px; display:block; margin-bottom:5px;"></i>
+                        WALI MURID<br>(Masyarakat)
+                    </td>
+                    <td>
+                        <strong>1. Monitoring Gizi</strong><br>
+                        (Pengawasan)
+                    </td>
+                    <td>
+                        Buka Website <span class="flow-arrow">→</span> Lihat Menu Hari Ini <span class="flow-arrow">→</span> Cek Detail Protein/Kalori.
+                    </td>
+                    <td>
+                        Ketenangan orang tua terhadap asupan gizi anak.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="actor-warga"></td>
+                    <td>
+                        <strong>2. Aspirasi / Aduan</strong><br>
+                        (Feedback)
+                    </td>
+                    <td>
+                        Temukan Masalah <span class="flow-arrow">→</span> Klik Menu "Lapor/Aduan" <span class="flow-arrow">→</span> Kirim Pesan via Sistem/WA.
+                    </td>
+                    <td>
+                        Perbaikan kualitas layanan SPPG yang berkelanjutan.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="actor-pimpinan">
+                        <i class="fas fa-user-tie" style="font-size:24px; display:block; margin-bottom:5px;"></i>
+                        KEPALA SPPG /<br>LURAH
+                    </td>
+                    <td>
+                        <strong>1. Pengawasan</strong><br>
+                        (Controlling)
+                    </td>
+                    <td>
+                        Buka Website (Kapanpun/Dimanapun) <span class="flow-arrow">→</span> Cek Grafik Distribusi & Foto Laporan Harian.
+                    </td>
+                    <td>
+                        Memastikan program berjalan sesuai Juknis BGN Pusat.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 20px; font-size: 10pt; font-style: italic;">
+            <strong>Catatan Teknis:</strong><br>
+            SOP ini dirancang untuk meminimalisir input manual yang berulang dan memaksimalkan transparansi publik secara digital (Paperless).
+        </div>
+
+        <div style="margin-top: 40px; float: right; text-align: center; width: 250px;">
+            <p>Disiapkan Oleh,</p>
+            <br><br><br>
+            <strong>ARIF ENDRY WASKITO</strong><br>
+            OemahDesainWeb
+        </div>
+    </div>
+
+</body>
+</html>
