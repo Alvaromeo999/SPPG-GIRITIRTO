@@ -6,11 +6,12 @@
     <title>Proposal Website SPPG Giritirto - OemahDesainWeb</title>
     <style>
         /* SETTING KERTAS A4 */
-        @page { size: A4; margin: 1,5cm; } /* Margin diperkecil dari 2cm ke 1,5cm */
+        /* PENTING: Gunakan TITIK (.) bukan KOMA (,) untuk desimal */
+        @page { size: A4; margin: 0; } 
         
         body { 
             font-family: 'Times New Roman', Times, serif; 
-            line-height: 1.4; /* Spasi baris sedikit dirapatkan */
+            line-height: 1.3; /* Spasi baris sedikit lebih rapat */
             color: #000;
             background: #ccc; 
             padding: 20px;
@@ -21,9 +22,10 @@
             background: white;
             width: 21cm;
             min-height: 29.7cm;
-            padding: 2cm;
+            /* Padding diperkecil agar ruang teks lebih luas */
+            padding: 1.5cm 2cm; 
             margin: 0 auto;
-            box-sizing: border-box; /* Agar padding tidak menambah lebar kertas */
+            box-sizing: border-box;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             position: relative;
         }
@@ -32,37 +34,37 @@
         .header { 
             text-align: center; 
             border-bottom: 3px double #000; 
-            padding-bottom: 10px; 
-            margin-bottom: 20px; 
+            padding-bottom: 5px; /* Dikurangi */
+            margin-bottom: 15px; /* Dikurangi */
         }
-        .header img { height: 70px; margin-bottom: 5px; }
+        .header img { height: 65px; margin-bottom: 5px; } /* Ukuran logo disesuaikan */
         .header h1 { margin: 0; font-size: 16pt; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
         .header h2 { margin: 2px 0; font-size: 11pt; font-weight: normal; }
         .header p { margin: 0; font-size: 10pt; font-style: italic; }
         
         /* ISI SURAT */
-        .meta-data { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 11pt; }
+        .meta-data { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 11pt; }
         
         .content h3 { 
             font-size: 12pt; 
             text-transform: uppercase; 
             border-bottom: 1px solid #000; 
-            padding-bottom: 3px; 
-            margin-top: 20px; /* Jarak antar sub-bab dikurangi */
-            margin-bottom: 10px;
+            padding-bottom: 2px; 
+            margin-top: 15px; /* Jarak antar bab dirapatkan */
+            margin-bottom: 8px;
         }
-        .content p { text-align: justify; margin-bottom: 8px; font-size: 11pt; }
-        .content ul { padding-left: 20px; margin: 5px 0 10px 0; }
-        .content li { margin-bottom: 3px; font-size: 11pt; }
+        .content p { text-align: justify; margin-bottom: 6px; font-size: 11pt; }
+        .content ul { padding-left: 20px; margin: 2px 0 8px 0; }
+        .content li { margin-bottom: 2px; font-size: 11pt; }
         
         /* TABEL */
-        table { width: 100%; border-collapse: collapse; margin: 10px 0; }
-        table th, table td { border: 1px solid #000; padding: 6px; text-align: left; font-size: 10pt; }
+        table { width: 100%; border-collapse: collapse; margin: 8px 0; }
+        table th, table td { border: 1px solid #000; padding: 5px; text-align: left; font-size: 10pt; }
         table th { background-color: #f0f0f0; text-align: center; font-weight: bold; }
 
         /* TANDA TANGAN */
         .signature { 
-            margin-top: 30px; 
+            margin-top: 20px; /* Jarak dari paragraf terakhir */
             float: right; 
             text-align: center; 
             width: 200px; 
@@ -71,7 +73,7 @@
         .signature .name { 
             font-weight: bold; 
             text-decoration: underline; 
-            margin-top: 70px; 
+            margin-top: 60px; /* Ruang untuk TTD basah/stempel */
         }
 
         /* TOMBOL PRINT */
@@ -79,12 +81,11 @@
         .btn-print { background: #2563eb; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-family: sans-serif; font-weight: bold; cursor: pointer; border: none; }
         .btn-print:hover { background: #1d4ed8; }
 
-        /* CSS KHUSUS SAAT DICETAK (PRINT) */
         @media print {
             body { background: white; padding: 0; margin: 0; }
-            .page { width: 100%; height: auto; margin: 0; padding: 0; box-shadow: none; border: none; }
+            .page { width: 100%; height: auto; margin: 0; padding: 1.5cm 2cm; box-shadow: none; border: none; }
             .no-print { display: none; }
-            @page { margin: 2cm; } /* Memaksa margin printer 2cm */
+            @page { margin: 0; } /* Reset margin browser biar full control di CSS .page */
         }
     </style>
 </head>
@@ -92,7 +93,7 @@
 
     <div class="no-print">
         <button onclick="window.print()" class="btn-print">🖨️ Klik Disini untuk Simpan PDF</button>
-        <p style="font-family: sans-serif; font-size: 12px; margin-top: 5px; color: #555;">(Pilih Destination: <b>Save as PDF</b> | Paper Size: <b>A4</b>)</p>
+        <p style="font-family: sans-serif; font-size: 12px; margin-top: 5px; color: #555;">(Pilih Destination: <b>Save as PDF</b> | Paper Size: <b>A4</b> | Scale: <b>Default/100%</b>)</p>
     </div>
 
     <div class="page">
@@ -116,7 +117,7 @@
                 di Tempat
             </div>
 
-            <p style="margin-top: 15px;"><strong>Perihal: Penawaran Sistem Informasi SPPG MBG Terpadu</strong></p>
+            <p style="margin-top: 10px;"><strong>Perihal: Penawaran Sistem Informasi SPPG MBG Terpadu</strong></p>
 
             <p>Dengan hormat,</p>
             <p>Sehubungan dengan pelaksanaan Program Makan Bergizi Gratis (MBG) Nasional, transparansi dan pengelolaan data menjadi kunci kepercayaan publik. Kami dari <strong>OemahDesainWeb</strong> mengajukan penawaran pembuatan Website Resmi SPPG Giritirto.</p>
@@ -124,7 +125,7 @@
             <h3>I. Latar Belakang & Solusi</h3>
             <p>Kami memahami tantangan SPPG dalam menyajikan data menu, gizi, dan distribusi secara transparan kepada wali murid. Solusi kami, <strong>"Giritirto Gizi Hub"</strong>, bukan sekadar profil situs web, melainkan sistem yang terintegrasi:</p>
             <ul>
-                <li><strong>Transparansi Menu:</strong> Orang tua dapat melihat menu jadwal & nilai gizi harian.</li>
+                <li><strong>Transparansi Menu:</strong> Orang tua dapat melihat jadwal menu & nilai gizi harian.</li>
                 <li><strong>Ekonomi Warga:</strong> Fitur "Mitra Tani" agar petani lokal bisa menyuplai bahan baku.</li>
                 <li><strong>Digitalisasi Laporan:</strong> Bukti foto kegiatan & distribusi yang dapat diakses publik.</li>
             </ul>
